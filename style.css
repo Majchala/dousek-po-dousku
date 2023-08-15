@@ -1,0 +1,554 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: all .2s linear;
+    font-family: 'Oswald', sans-serif;
+}
+
+:root {
+    --main-color: #ECE8E5;
+    --text-color: #333;
+    --blue-color: #3D5C6E;
+    --red-color: #D55128;
+
+    --border-radius:  0% 0% 0% 0% / 0% 0% 0% 0%;
+    --border-radius-hover: 50% 50% 50% 50% / 5% 5% 5% 5%;
+    --border: .2rem solid var(--blue-color);
+    --border-hover: .3rem solid var(--blue-color);
+    --box-shadow: 10px 10px rgba(0,0,0,.15);
+    --box-shadow-hover: 10px 10px rgba(0,0,0,.25);
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+
+section { 
+    padding: 3rem 9%;
+}
+
+.heading {
+    font-size: 9rem;
+    color: transparent;
+    -webkit-text-stroke: .05rem grey;
+    text-align: center;
+    pointer-events: none;
+    position: relative;
+    font-family: 'Dancing Script', cursive;
+    padding-bottom: 4rem;
+}
+
+.heading span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    color: var(--text-color);
+    font-size: 3rem;
+    padding-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: .9rem 1.5rem;
+    border-radius: var(--border-radius);
+    color: var(--red-color);
+    background: none;
+    border: var(--border);
+    cursor: pointer;
+    margin-top: 1rem;
+    font-size: 1.7rem;
+    box-shadow: var(--box-shadow);
+}
+
+.btn:hover {
+    border-radius: var(--border-radius-hover);
+    border: var(--border-hover);
+    box-shadow: var(--box-shadow-hover);
+}
+
+.header .btn {
+    margin-top: 0;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    background: white;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    padding: 2rem 9%;
+}
+
+.header .logo {
+    color: var(--blue-color);
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+}
+
+.header .logo:hover {
+    transform: scale(1.2);
+}
+
+.header .logo img {
+    height: 4rem;
+    padding-top: 1rem;
+}
+
+.header .navbar a {
+    margin: 0 1rem;
+    font-size: 1.7rem;
+    color: var(--text-color);
+}
+
+.header .navbar a:hover {
+    font-size: 2rem;
+    color: var(--red-color);
+}
+
+#menu-btn {
+    font-size: 3rem;
+    color: var(--red-color);
+    cursor: pointer;
+    display: none;
+}
+
+/* HOME SECTION */
+.home {
+    min-height: 90vh;
+    padding-top: 12rem;
+    background-color: #ECE8E5;
+}
+
+.home .row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.home .row .content {
+    flex: 1 1 42rem;
+}
+
+.home .row .image {
+    flex: 1 1 42rem;
+    padding-top: 9rem;
+    text-align: center;
+}
+
+.home .row .image img {
+    height: 50rem;
+    animation: float 4s linear infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0rem);
+    }
+    50% {
+        transform: translateY(-4rem);
+    }
+}
+
+.home .row .content h3{
+    font-size: 6.5rem;
+    color: var(--text-color);
+    text-transform: uppercase;
+}
+
+.home .image-slider {
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.home .image-slider img {
+    height: 10rem;
+    margin: 0 .5rem;
+    cursor: pointer;
+    margin-top: 4rem;
+}
+
+.home .image-slider img:hover {
+    transform: translateY(-2rem);
+}
+
+.home .image-slider h3 {
+    font-size: 2rem;
+    color: var(--text-color);
+    text-transform: uppercase;
+}
+
+
+/* ABOUT SECTION */
+.about .row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.about .row .image {
+    flex: 1 1 42rem;
+}
+
+.about .row .image img {
+    width: 100%;
+    padding-right: 2.5rem;
+}
+
+.about .row .content {
+    flex: 1 1 42rem;
+}
+
+.about .row .content .title {
+    color: var(--text-color);
+    font-size: 3rem;
+    line-height: 1.8;
+}
+
+.about .row .content {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    line-height: 1.8;
+    padding: 1rem 0;
+}
+
+.about .row .content .icons-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-top: 3rem;
+}
+
+.about .row .content .icons-container .icons {
+    flex: 1 1 15rem;
+    padding: 1.5rem;
+    text-align: center;
+    border: var(--border);
+    border-radius: var(--border-radius);
+}
+
+.about .row .content .icons-container .icons img {
+    height: 5rem;
+}
+
+.about .row .content .icons-container .icons h3 {
+    font-size: 1.7rem;
+    padding-top: 1rem;
+    color: var(--blue-color);
+}
+
+/* MENU SECTION */
+.menu .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.menu .box-container .box {
+    flex: 1 1 20rem;
+    padding: 2rem;
+    border: var(--border);
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-left: 6rem;
+    margin-right: 6rem;
+}
+
+.menu .box-container .box:hover {
+    border: var(--border-hover);
+    border-radius: var(--border-radius-hover);
+}
+
+.menu .box-container .box img {
+    height: 8rem;
+    margin-left: -6rem;
+}
+
+.menu .box-container .box .content h3 {
+    font-size: 2.2rem;
+    color: var(--red-color);
+    line-height: 1.8;
+}
+
+.menu .box-container .box .content p {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    line-height: 1.8;
+    padding: 1rem 0;
+}
+
+.menu .box-container .box .content span {
+    font-size: 2rem;
+    color: var(--text-color);
+    line-height: 1.8;
+}
+
+.menu .full-menu {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+/* OUR CAFE SECTION */
+.our-cafe {
+    background-color: var(--main-color);
+}
+.our-cafe .cafe-slider {
+    padding-bottom: 5rem;
+}
+
+.our-cafe .cafe-slider .box {
+    border-radius: var(--border-radius);
+    position: relative;
+    z-index: 0;
+    padding: 2rem;
+    text-align: center;
+}
+
+.our-cafe .cafe-slider .box img {
+    height: 35rem;
+    width: 45rem;
+    border-radius: 5px;
+    margin-bottom: .7rem;
+}
+
+.swiper-pagination-bullet {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--red-color);
+}
+
+/* RESERVATION SECTION */
+.reservation {
+    background-image: url(../images/background.jpg) !important;
+    background-repeat: none;
+    background-size: cover;
+}
+
+.reservation form {
+    margin: 0 auto 2rem auto;
+    max-width: 60rem;
+    border-radius: var(--border-radius);
+    border: var(--border);
+    padding: 3rem;
+}
+
+.reservation form .box {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    border-radius: .5rem;
+    border: var(--border);
+    font-size: 1.6rem;
+    background: none;
+    text-transform: none;
+    color: var(--blue-color);
+    margin: .7rem 0;
+}
+
+.reservation form .box:focus {
+    border: 2px solid var(--red-color);
+}
+
+.reservation form textarea {
+    height: 15rem;
+    resize: none;
+}
+
+/* FOOTER SECTION */
+.footer .box-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer .box-container .box h3 {
+    font-size: 2.5rem;
+    padding: 1rem 0;
+    color: var(--text-color);
+}
+
+.footer .box-container .box a {
+    display: block;
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    color: var(--text-color);
+}
+
+.footer .box-container .box a i {
+    padding: .5rem;
+}
+
+.footer .box-container .box a:hover {
+    transform: scale(1.1);
+}
+
+.footer .copyright {
+    text-align: center;
+    font-size: 2rem;
+    padding: 2rem 1rem;
+    margin-top: 1rem;
+    color: var(--red-color);
+}
+
+.footer .copyright span {
+    text-transform: none;
+}
+
+/* MEDIA QUERIES */
+@media(max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+
+    .header {
+        padding: 2rem;
+    }
+
+    section { 
+        padding: 2rem;
+    }
+}
+
+@media(max-width: 768px) {
+    .heading {
+        font-size: 6rem;
+    }
+
+    .heading span {
+        font-size: 2.3rem;
+    } 
+
+    #menu-btn {
+        display: initial;
+    }
+
+    #menu-btn.fa-times {
+        transform: rotate(180deg);
+    }
+
+    .header .navbar {
+        position: absolute;
+        top: 99%;
+        left: 0;
+        right: 0;
+        background-color: white;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    .header .navbar.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    .header .navbar a {
+        display: block;
+        font-size: 2.2rem;
+        margin: 0;
+        padding: 1.5rem 2rem;
+    }
+
+    .home {
+        text-align: center;
+    }
+
+    .home .row .content h3 {
+        font-size: 4rem;
+    }
+
+    .menu .box-container .box {
+        margin-left: 0;
+        margin-top: 3rem;
+        flex-flow: column;
+        text-align: center;
+    }
+
+    .menu .box-container .box img {
+        margin-left: 0;
+        margin-top: -6rem;
+    }
+}
+
+@media(max-width: 540px) {
+    .menu .box-container .box {
+        flex: 1 1 10rem;
+    }
+    .home .image-slider img {
+        height: 7rem;
+    }
+}
+
+@media(max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+    .home .row .image img {
+        height: auto;
+        width: 100%;
+    }
+    .menu .box-container .box {
+        flex: 1 1 15rem;
+    }
+    .home .image-slider img {
+        height: 6rem;
+    }
+    .menu .box-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
+    }
+    
+    .menu .box-container .box {
+        flex: 1 1 10rem;
+        padding: 1rem;
+        border: var(--border);
+        border-radius: var(--border-radius);
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin-left: 6rem;
+        margin-right: 6rem;
+    }
+}
+
+@media(max-width: 440px) {
+    .our-cafe .cafe-slider .box img {
+        width: 30rem;
+        height: 25rem;
+    } 
+}
+
+@media(max-width: 369px) {
+    .home .image-slider img {
+        height: 4rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
